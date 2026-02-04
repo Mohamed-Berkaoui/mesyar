@@ -18,8 +18,27 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Get all sections
+      const sections = navLinks.map(link => ({
+        name: link.name,
+        element: document.querySelector(link.href)
+      })).filter(section => section.element);
+
+      // Find which section is currently in view
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const element = section.element as HTMLElement;
+        if (element.offsetTop <= scrollPosition) {
+          setActiveLink(section.name);
+          break;
+        }
+      }
     };
     
+    handleScroll(); // Call once on mount
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -28,7 +47,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} dir="rtl">
       {/* Right: Logo */}
       <a href="#home" className="navbar-logo">
-        <img src="/logo.png" alt="المسار" className="logo-image" />
+        <img src="/logo.png" alt="المساير" className="logo-image" />
       </a>
 
       {/* Center: Navigation Pill */}

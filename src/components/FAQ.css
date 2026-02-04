@@ -44,12 +44,12 @@
   content: '';
   position: absolute;
   z-index: -1;
-  bottom: 6px;
+  bottom: 4px;
   left: 0%;
   right: 0%;
-  height: 24px;
+  height: 29px;
   background:var(--primary-soft);
-  opacity: 0.8;
+  opacity: 0.6;
   border-radius: 6px;
   /* animation: breathe 3s ease-in-out infinite; */
 }
@@ -179,6 +179,10 @@
   text-align: center;
   background-color: var(--bg-page);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:40px;
   overflow: hidden;
 }
 
@@ -215,17 +219,20 @@
   position: relative;
   display: inline-block;
   z-index: 1;
+  margin: 4px;
+
 }
 
 .cta-title::after {
   content: '';
   position: absolute;
   z-index: -1;
-  bottom: 6px;
-  left: -8px;
-  right: -8px;
-  height: 14px;
-  background: linear-gradient(90deg, var(--primary-soft), rgba(243, 210, 195, 0.4));
+  bottom: 2px;
+  left: 0px;
+  right: 0px;
+  height: 24px;
+  background: var(--primary-soft);
+  opacity: 0.8 ;
   border-radius: 4px;
 }
 

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="/logo.png" alt="المسار" className="footer-logo-image" />
+            <img src="/logo.png" alt="المساير" className="footer-logo-image" />
           </div>
 
           <div className="footer-socials">
@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-copyright">
-          © {new Date().getFullYear()} المسار. جميع الحقوق محفوظة.
+          © {new Date().getFullYear()} المساير. جميع الحقوق محفوظة.
         </div>
       </div>
     </footer>

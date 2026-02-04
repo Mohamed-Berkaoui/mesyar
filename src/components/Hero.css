@@ -4,56 +4,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-white);
   justify-content: center;
   padding-top: 100px;
   padding-bottom: 60px;
   overflow: hidden;
-  background-color: var(--bg-page);
 }
 
 .hero-background-pattern {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, var(--primary) 1px, transparent 1px);
-  background-size: 32px 32px;
-  opacity: 0.04;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 320px 320px;
+  opacity: 1;
   pointer-events: none;
 }
 
-/* Decorative floating shapes */
+/* Subtle vignette effect for spotlight */
 .hero::before {
   content: '';
   position: absolute;
-  top: 15%;
-  right: 8%;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, rgba(192, 112, 79, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(60px);
+  inset: 0;
+  background: radial-gradient(ellipse at center, #f3d2c3b4 0%, #f3d2c35f 20%, transparent  70%);
   pointer-events: none;
-  animation: float 6s ease-in-out infinite;
+  z-index: 1;
 }
 
+/* Remove the old floating shapes */
 .hero::after {
-  content: '';
-  position: absolute;
-  bottom: 20%;
-  left: 5%;
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, rgba(243, 210, 195, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(50px);
-  pointer-events: none;
-  animation: float 8s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) translateX(0px); }
-  25% { transform: translateY(-20px) translateX(10px); }
-  50% { transform: translateY(-10px) translateX(-10px); }
-  75% { transform: translateY(-30px) translateX(5px); }
+  display: none;
 }
 
 .hero-content {
@@ -68,7 +47,7 @@
   font-size: 52px;
   font-weight: 700;
   line-height: 1.25;
-  color: var(--text-dark);
+  color: #1e293b;
   margin-bottom: 20px;
   letter-spacing: -0.02em;
 }
@@ -89,7 +68,7 @@
   background-color: var(--primary-soft);
   z-index: -1;
   border-radius: 4px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .hero-subtitle {
@@ -107,16 +86,18 @@
   align-items: center;
   justify-content: center;
   background-color: var(--primary);
-  color: var(--text-light);
+  color: #ffffff;
   font-size: 17px;
   font-weight: 600;
   padding: 14px 36px;
   min-width: 180px;
   height: 52px;
-  border-radius: var(--radius-pill);
+  border-radius: 50px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 24px rgba(192, 112, 79, 0.35);
   animation: pulse-glow 3s ease-in-out infinite;
+  border: none;
+  cursor: pointer;
 }
 
 @keyframes pulse-glow {

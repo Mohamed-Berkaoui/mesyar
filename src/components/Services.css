@@ -63,14 +63,14 @@
 .services-title .title-highlight::after {
   content: '';
   position: absolute;
-  bottom: 8px;
+  bottom: 6px;
   left: -4px;
   right: -4px;
-  height: 30px;
+  height: 25px;
   background: var(--primary-soft);
   z-index: -1;
   border-radius: 4px;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .services-subtitle {
@@ -89,7 +89,7 @@
   background-color: var(--bg-white);
   border-radius: 24px;
   padding: 36px 30px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.105);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: right;
   height: 100%;

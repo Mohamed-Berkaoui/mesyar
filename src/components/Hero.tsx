@@ -32,6 +32,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
         >
           تواصل معنا
         </motion.button>
