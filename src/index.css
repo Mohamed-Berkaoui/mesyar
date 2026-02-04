@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+:root {
+  /* Colors */
+  --primary: #C0704F;
+  --primary-hover: #A85C40;
+  --primary-soft: #F3D2C3;
+  --accent-terracotta: #B56A50;
+  
+  --text-dark: #1F2933;
+  --text-medium: #2C3E50;
+  --text-muted: #6B7280;
+  --text-placeholder: #B0B0B0;
+  --text-light: #FFFFFF;
+  
+  --bg-page: #FFF7F2;
+  --bg-white: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --bg-footer: #B56A50;
+  
+  /* Spacing */
+  --container-width: 1200px;
+  --header-height: 100px;
+  
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+  --shadow-floating: 0 10px 40px rgba(0, 0, 0, 0.05); /* For booking card */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Tajawal', sans-serif;
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Geometric Pattern Background Utility */
+.bg-pattern {
+  background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--accent-terracotta) 100%);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A85C40 0%, var(--primary) 100%);
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(192, 112, 79, 0.25);
+  color: #1F2933;
+}
+
+/* Smooth focus states */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Loading shimmer effect utility */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, 
+    var(--bg-page) 0%, 
+    var(--primary-soft) 50%, 
+    var(--bg-page) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Floating animation utility */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse animation utility */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}

@@ -1,0 +1,315 @@
+.faq-section {
+  padding: 100px 24px;
+  background-color: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-section::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(243, 210, 195, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.faq-section::after {
+  content: '';
+  position: absolute;
+  bottom: 50px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(192, 112, 79, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.faq-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1A1D21;
+  margin-bottom: 56px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-title::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 6px;
+  left: 0%;
+  right: 0%;
+  height: 24px;
+  background:var(--primary-soft);
+  opacity: 0.8;
+  border-radius: 6px;
+  /* animation: breathe 3s ease-in-out infinite; */
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scaleX(1); opacity: 0.8; }
+  50% { transform: scaleX(1.1); opacity: 1; }
+}
+
+.faq-list {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-card:hover {
+  border-color: var(--primary-soft);
+  box-shadow: 0 12px 40px rgba(192, 112, 79, 0.1);
+  transform: translateY(-2px);
+}
+
+.faq-card.open {
+  border-color: var(--primary);
+  background-color: #FFFBF9;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C3E50;
+  transition: color 0.3s ease;
+}
+
+.faq-card:hover .faq-question,
+.faq-card.open .faq-question {
+  color: var(--primary);
+}
+
+.faq-icon {
+  color: var(--primary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--primary-soft);
+  border-radius: 50%;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.faq-card:hover .faq-icon {
+  animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+.faq-card.open .faq-icon {
+  transform: rotate(180deg);
+  background-color: var(--primary);
+  color: white;
+}
+
+.faq-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-soft), transparent);
+  margin: 18px 0;
+  display: none;
+}
+
+.faq-card.open .faq-divider {
+  display: block;
+}
+
+.faq-answer {
+  color: #6B7280;
+  font-size: 16px;
+  line-height: 1.8;
+  display: none;
+  padding-right: 8px;
+}
+
+.faq-card.open .faq-answer {
+  display: block;
+  animation: fadeInSlide 0.4s ease;
+}
+
+@keyframes fadeInSlide {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 24px;
+  text-align: center;
+  background-color: var(--bg-page);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, var(--primary) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(192, 112, 79, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1A1D21;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.cta-title::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 6px;
+  left: -8px;
+  right: -8px;
+  height: 14px;
+  background: linear-gradient(90deg, var(--primary-soft), rgba(243, 210, 195, 0.4));
+  border-radius: 4px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #34E075 0%, #25D366 100%);
+  color: white;
+  padding: 20px 50px;
+  border-radius: 60px;
+  font-size: 19px;
+  font-weight: 700;
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.35);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  animation: pulse-green 3s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 12px 32px rgba(37, 211, 102, 0.35); }
+  50% { box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5); }
+}
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 45px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-btn:hover::before {
+  left: 100%;
+}
+
+.whatsapp-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover svg {
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 70px 20px;
+  }
+  
+  .faq-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .faq-card {
+    padding: 22px 24px;
+  }
+  
+  .faq-question {
+    font-size: 16px;
+  }
+  
+  .cta-section {
+    padding: 70px 20px;
+  }
+  
+  .cta-title {
+    font-size: 28px;
+  }
+  
+  .whatsapp-btn {
+    padding: 18px 40px;
+    font-size: 17px;
+  }
+}
