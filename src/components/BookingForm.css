@@ -127,11 +127,11 @@
 }
 
 .input-field:focus ~ .floating-label,
-.input-field:valid ~ .floating-label,
+.input-field:not(:placeholder-shown) ~ .floating-label,
 .select-field:focus ~ .floating-label,
 .select-field:not([value=""]) ~ .floating-label,
 .textarea-field:focus ~ .floating-label,
-.textarea-field:valid ~ .floating-label {
+.textarea-field:not(:placeholder-shown) ~ .floating-label {
   top: -10px;
   transform: translateY(0);
   font-size: 13px;
@@ -218,6 +218,17 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+}
+
+.booking-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.booking-submit-btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 8px 28px rgba(192, 112, 79, 0.4);
 }
 
 .booking-submit-btn::before {
