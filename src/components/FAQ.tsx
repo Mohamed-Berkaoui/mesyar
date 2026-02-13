@@ -72,7 +72,7 @@ const FAQ = () => {
           عندك استفسار؟
         </motion.h2>
         <motion.a 
-          href="https://wa.me/966000000000" 
+          href="https://wa.me/966509155916" 
           className="whatsapp-btn"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -82,7 +82,7 @@ const FAQ = () => {
           whileTap={{ scale: 0.98 }}
         >
            <span>تواصل عبر الواتساب</span>
-           <MessageCircle fill="white" size={24} />
+           <MessageCircle  fill="white" size={24} />
         </motion.a>
       </section>
     </>
